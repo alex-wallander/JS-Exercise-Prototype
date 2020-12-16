@@ -85,7 +85,9 @@ function Airplane(name) {
     this.tank = 0;
     this.odometer = 0;
   }
-  
+  Car.prototype.fill = function(gallons) {
+    this.tank += gallons;
+  }
   
   /*
     TASK 3
@@ -95,8 +97,7 @@ function Airplane(name) {
           + Should return a string "Playing with x", x being the favorite toy.
   */
  function Baby(name, age, favoriteToy) {
-   this.name = name;
-   this.age = age;
+   Person.call(this, name, age);
    this.favoriteToy = favoriteToy;
   }
   Baby.prototype = Object.create(Person.prototype);
